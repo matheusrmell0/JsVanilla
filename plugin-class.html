@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{padding-top:50px;margin:0 auto;width:max-content;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif}::placeholder{padding:5px;font-size:1rem}#button{background:#d0d0d0;font-size:1rem;font-weight:700;height:40px;width:200px}#button:hover{background:#f0f0f0}input{border:1px solid #d0d0d0;border-radius:4px;height:20px;width:300px}input:nth-of-type(n+2){margin-top:10px}form{padding:20px;display:flex;flex-direction:column;flex-wrap:wrap;gap:10px;align-items:center;border:2px solid #b1b1b1;border-radius:5px;margin-top:10px}span::after{display:block;margin-top:20px;content:"";width:500px;height:500px;background:gray;border-radius:5px;border:1px solid #f0f0f0}.red{background:red;color:#fff}.green{background:green;color:#fff}.blue{background:#00f;color:#fff}span::after{background: inherit;}
+   </style>
+  <title>Js Plugin Classes</title>
+</head>
+
+<body>
+  <div>
+    <form id="formulario">
+      <input type="text" id="selector" placeholder="Adicione o seletor CSS">
+      <input type="text" id="className" placeholder="Adicione a classe para adicionar">
+      <input type="text" id="classDelete" placeholder="Adicione a classe para remover">
+      <input id="button" type="submit" value="Confirmar">
+    </form>
+  </div>
+
+  <span>
+  </span>
+
+  <script>
+    class ClassAtribute {
+      constructor() {
+        this.Toogleclass = function (selector, addclass, delclass) {
+          const id = document.querySelectorAll(selector);
+          id.forEach((item) => {
+            item.classList.add(addclass);
+            item.classList.remove(delclass);
+            if (item.hasAttribute("class", addclass))
+              console.log(`Seletor: "${selector}" | Classe: "${addclass}" adicionada | Classe: "${delclass}" removida`);
+            else console.log(`Erro: Seletor: "${selector}" | Classe a ser adicionada: "${addclass}" | Classe a ser removida: "${delclass}"`);
+          });
+        };
+      }
+    }
+    const plugginClass = new ClassAtribute();
+
+    const form = document.getElementById("formulario");
+    const selector = document.getElementById("selector");
+    const className = document.getElementById("className");
+    const classDelete = document.getElementById("classDelete");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const tag = selector.value;
+      const classe = className.value;
+      const delClasse = classDelete.value;
+      plugginClass.Toogleclass(tag, classe, delClasse)
+      return (`Seletor: "${tag}" | Classe: "${classe}" adicionada | Classe: "${delClasse}" removida`);
+    });
+
+  </script>
+</body>
+</html>
