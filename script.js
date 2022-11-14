@@ -888,3 +888,486 @@
 //   else
 //     console.log('Não existe');
 // //
+
+//
+// const transacoes = [
+//   {
+//     descricao: "Taxa do Pão",
+//     valor: "R$ 39",
+//   },
+//   {
+//     descricao: "Taxa do Mercado",
+//     valor: "R$ 129",
+//   },
+//   {
+//     descricao: "Recebimento do Cliente",
+//     valor: "R$ 99",
+//   },
+//   {
+//     descricao: "Taxa do Banco",
+//     valor: "R$ 129",
+//   },
+//   {
+//     descricao: "Recebimento do Cliente",
+//     valor: "R$ 49",
+//   },
+// ];
+
+// let taxaTotal = 0;
+// let recebimentoTotal = 0;
+// transacoes.forEach((item) => {
+//   const numeroLimpo = +item.valor.split("R$")[1].trim();
+//   if (item.descricao.slice(0, 4) === "Taxa") {
+//     taxaTotal += numeroLimpo;
+//   } else if (item.descricao.slice(0, 11) === "Recebimento") {
+//     recebimentoTotal += +item.valor.replace("R$ ", "");
+//   }
+// });
+// console.log(taxaTotal);
+// console.log(recebimentoTotal);
+// //
+
+// const transportes = "Carro;Avião;Trem;Ônibus;Bicicleta";
+// const transportesArray = transportes.split(";");
+// console.log(transportesArray);
+// //
+
+// const html = `<ul>
+//                 <li><span>Sobre</span></li>
+//                 <li><span>Produtos</span></li>
+//                 <li><span>Contato</span></li>
+//               </ul>`;
+// const htmlNovo = html.split("span").join("a");
+// console.log(htmlNovo);
+// //
+
+// const frase = "Melhor do ano!";
+// const fraseLastChar = frase.slice(-1);
+// console.log(fraseLastChar);
+// //
+
+// const transacoes2 = [
+//   "Taxa do Banco",
+//   "   TAXA DO PÂO",
+//   "  taxa do mercado",
+//   "depósito Bancário",
+//   "TARIFA especial",
+// ];
+// let taxasTotais = 0;
+// transacoes2.forEach((item) => {
+//   if (item.toLowerCase().trim().slice(0, 4) === "taxa") {
+//     ++taxasTotais;
+//     console.log(taxasTotais);
+//   }
+// });
+// //
+
+// let valor = 48.53
+// let valor2 = 44.53
+// valor = valor.toLocaleString('pt-BR', {style:'currency', currency: 'BRL'});
+// valor2 = valor2.toLocaleString('en-US', {style:'currency', currency: 'USD'});
+// console.log(valor)
+// console.log(valor2)
+// //
+
+// let max = 2000;
+// let min = 1050;
+// const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+// console.log(randomNumber);
+// //
+
+// const numeros = "4, 5, 20, 8, 9";
+// const arrayNumbers = numeros.split(", ");
+// const numerMax = Math.max(...arrayNumbers);
+// console.log(numerMax);
+// //
+
+//
+// const listaPrecos = ["R$ 59,99", " R$ 100,222", "R$ 230  ", "r$ 200"];
+
+// function limparPreco(preco) {
+//   preco = +preco
+//     .trim()
+//     .toLocaleUpperCase()
+//     .replace("R$ ", "")
+//     .replace(",", ".");
+//   preco = +preco.toFixed(2);
+//   return preco;
+// }
+
+// let somaTotal = 0;
+// listaPrecos.forEach((preco) => {
+//   somaTotal += limparPreco(preco);
+// });
+// somaTotal = somaTotal.toLocaleString("pt-BR", {
+//   style: "currency",
+//   currency: "BRL",
+// });
+// console.log(somaTotal);
+// //
+
+//
+// const obj ={
+//   0: 'Mello',
+//   1: 'Matheus',
+//   2: 'Teste',
+//   length: 3,
+// }
+// console.log(Array.from(obj))
+//
+
+// const comidas = ['Pizza', 'Frango', 'Carne', 'Macarrao'];
+// const comidasFirstIndex = comidas.shift();
+// const comidasLastIndex = comidas.pop();
+
+// comidas.unshift('Peixe', 'Batata');
+// // comidas.splice(0, 0, 'Peixe', 'Batata');
+// comidas.push('Arroz')
+// // comidas.splice(comidas.length, 0, 'Arroz');
+
+// console.log(comidasFirstIndex, comidasLastIndex)
+// console.log(comidas)
+// //
+
+// const estudantes = ['Marcio', 'Brenda', 'Joana', 'Kleber', 'Julia'];
+// estudantes.sort()
+// estudantes.reverse()
+// console.log(estudantes);
+// console.log(estudantes.includes('Joana'));
+// console.log(estudantes.includes('Juliana'));
+// //
+
+// let html = `<section>
+// <div>Sobre</div>
+// <div>Produtos</div>
+// <div>Contato</div>
+// </section>`
+
+// html = html.split("section").join("ul").split('div').join('li');
+// console.log(html);
+// //
+
+// const carros = ['Ford', 'Fiat', 'VW', 'Honda'];
+// const carrosClone = carros.slice();
+// carros.pop();
+// console.log(carrosClone, carros)
+//
+
+// //
+// const aulas = [
+//   {
+//     nome: 'HTML',
+//     min: 15,
+//   },
+//   {
+//     nome: 'CSS',
+//     min: 25,
+//   },
+//   {
+//     nome: 'JavaScript',
+//     min: 55,
+//   },
+//   {
+//     nome: 'Ruby',
+//     min: 45,
+//   },
+//   {
+//     nome: 'Python',
+//     min: 40,
+//   },
+// ]
+
+// const nameItem = object => object.nome;
+// const arrayNomeAulas = aulas.map(nameItem);
+// console.log(arrayNomeAulas);
+// //
+
+//
+// const numbers = [10, 25, 30];
+// const reduceNumbers = numbers.reduce((acumulador, item, index, array) => {
+//   console.log(acumulador, item, index);
+//   return acumulador + item;
+// }, 100)
+// console.log(reduceNumbers);
+// //
+
+// const numbers = [10, 25, 30];
+// const reduceNumbers = numbers.reduce((acumulador, item) => {
+//   return acumulador + item;
+// }, 0)
+// console.log(reduceNumbers);
+// //
+
+// const numbers = [10, 25, 30, 3, 54, 33, 22];
+// const highNumber = numbers.reduce(
+//   (anterior, atual) => (anterior < atual ? atual : anterior),
+//   0
+// );
+// console.log(highNumber);
+// //
+
+// const maiorNumero = numbers.reduce((anterior, atual) => {
+//   if (anterior > atual) return anterior;
+//   else return atual;
+// }, 0);
+// console.log(maiorNumero);
+
+// const aulas = [
+//   {
+//     nome: 'HTML',
+//     min: 15,
+//   },
+//   {
+//     nome: 'CSS',
+//     min: 25,
+//   },
+//   {
+//     nome: 'JavaScript',
+//     min: 55,
+//   },
+//   {
+//     nome: 'Ruby',
+//     min: 45,
+//   },
+//   {
+//     nome: 'Python',
+//     min: 40,
+//   },
+// ]
+
+// const listaAulas = aulas.reduce((acumulador, aula, index) => {
+//   acumulador[index] = aula.nome
+//   return acumulador;
+// }, {})
+// console.log(listaAulas);
+
+// const listaMin = aulas.reduce((acumulador, aula, index) => {
+//   acumulador[index] = aula.min
+//   return acumulador;
+// }, {})
+// console.log(listaMin);
+//
+
+// const frutas = ['Banana', 'Pêra', 0, 'Uva'];
+// // const temUva = frutas.some((item)=>{
+// //   return item === 'Uva';
+// // });
+
+// const every = frutas.every((item)=>{
+//   console.log(item);
+//   return item;
+// });
+
+// // console.log(temUva);
+// console.log(every);
+// //
+
+// const numeros = [10, 223, 22, 65, 12, 55, 12, 76];
+// const maiorQue = numeros.every(n => n >= 10);
+// console.log(maiorQue)
+// //
+//
+// const frutas = ['Banana', 'Pêra', 0, 'Uvas'];
+// const indexUva = frutas.findIndex(item =>{
+//   return item === 'Uvas'
+// });
+// console.log(indexUva)
+//
+
+// const frutas = ['Banana', undefined, null, 'Pêra', 0, 'Uva', NaN, 'Maçã', ''];
+// const arrayFrutas = frutas.filter((item)=>{
+//   return item;
+// });
+// console.log(arrayFrutas)
+//
+
+// const numeros = [6, 112, 4, 21, 2321, 102, 45 ,206, '46'];
+// const buscarMaior45 = numeros.filter(x => x >= 45);
+// console.log(buscarMaior45);
+//
+
+// const aulas = [
+//   {
+//     nome: 'HTML',
+//     min: 15,
+//   },
+//   {
+//     nome: 'CSS',
+//     min: 25,
+//   },
+//   {
+//     nome: 'JavaScript',
+//     min: 55,
+//   },
+//   {
+//     nome: 'Ruby',
+//     min: 10,
+//   },
+//   {
+//     nome: 'Python',
+//     min: 40,
+//   },
+// ]
+
+// const maiores15 = aulas.filter(aula => aula.min >= 15);
+// console.log(maiores15);
+// //
+
+//
+// const listaCursos = Array.from(document.querySelectorAll('.curso'));
+// const cursoObjeto = listaCursos.map((curso)=>{
+//   const titulo = curso.querySelector('.curso h1').innerText;
+//   const descricao = curso.querySelector('.curso h1').nextElementSibling.innerText;
+//   const aulas = +curso.querySelector('.curso .aulas').innerText;
+//   const horas = +curso.querySelector('.curso .horas').innerText;
+// return {
+//   titulo,
+//   descricao,
+//   aulas,
+//   horas,
+// // titulo: curso.querySelector('.curso h1').innerText,
+// // descricao: curso.querySelector('.curso h1').nextElementSibling.innerText,
+// // aulas: +curso.querySelector('.curso .aulas').innerText,
+// // horas: +curso.querySelector('.curso .horas').innerText,
+// }
+// });
+// console.log(cursoObjeto);
+// //
+
+// const numeros = [3, 44, 333, 23, 122, 322, 33];
+// const numerosMaior100 = numeros.filter((numero)=>{
+//   return numero > 100;
+// });
+// console.log(numerosMaior100)
+// //
+
+// const instrumentos = ['Guitarra', 'Baixo', 'Bateria', 'Teclado']
+// const incrementosVerificar = instrumentos.includes('Baixo');
+// const possuiBaixo = instrumentos.some((item)=> item === 'Baixo');
+// console.log(incrementosVerificar, possuiBaixo);
+// //
+
+//
+// const produto = { nome: "Aveia", preco: "R$ 3,99" };
+// const compras = [
+//   {
+//     item: "Banana",
+//     preco: "R$ 4,99",
+//   },
+//   {
+//     item: produto.nome,
+//     preco: produto.preco,
+//   },
+//   {
+//     item: "Ovo",
+//     preco: "R$ 2,99",
+//   },
+//   {
+//     item: "Carne",
+//     preco: "R$ 25,49",
+//   },
+//   {
+//     item: "Refrigerante",
+//     preco: "R$ 5,35",
+//   },
+//   {
+//     item: "Quejo",
+//     preco: "R$ 10,60",
+//   },
+//   {
+//     item: "Arroz",
+//     preco: "R$ 5,50",
+//   },
+//   {
+//     item: "Frango",
+//     preco: "R$ 12,50",
+//   },
+// ];
+
+// let precoTotal = 0;
+// const valorTotal = compras.map((objeto) => {
+//   const preco = +objeto.preco.replace("R$ ", "").replace(",", ".");
+//   precoTotal += preco;
+// });
+// precoTotal = precoTotal.toLocaleString("pt-BR", {
+//   style: "currency",
+//   currency: "BRL",
+// });
+// console.log(precoTotal);
+
+// //
+// const comprasTotal = compras.reduce((zero, item) =>{
+// const preco = +item.preco.replace("R$ ", "").replace(",", ".");
+// return zero + preco;
+// }, 0);
+// const valorfinal = comprasTotal.toLocaleString('pt-BR', {style: "currency", currency: 'BRL'});
+// console.log(valorfinal);
+//
+
+// const perimetro = new Function('lado', 'return lado * 4');
+// console.log(perimetro(5));
+// //
+
+// function somar(n1 , n2){
+//   return n1 + n2 + ' 2';
+// }
+// console.log(typeof(somar(3,3)));
+
+// function somar(n1 , n2){
+//   return n1 + n2;
+// }
+// console.log(somar.name)
+
+// const carros = ['Ford', 'Fiat', 'VW'];
+// const frutas = ['Banana', 'Uva', 'Pêra'];
+
+// carros.forEach.call(frutas, (item)=>{console.log(item)});
+//
+
+// class Dom {
+//   constructor(seletor) {
+//     this.element = document.querySelector(seletor);
+//   }
+// }
+// Dom.prototype.ativo = function(classe){
+//   this.element.classList.add(classe)
+// }
+// const h1 = {
+//   element: document.querySelector('h1'),
+// }
+// const classeSelecionar = new Dom('section');
+// classeSelecionar.ativo.call(h1, 'ativo');
+// console.log(classeSelecionar.ativo('ativo'))
+// console.log(classeSelecionar.element)
+// 
+
+// const h1 = {
+//   element: document.querySelector('h1'),
+// }
+// class Dom {
+//   constructor(seletor) {
+//     this.element = document.querySelector(seletor);
+//   }
+// }
+// Dom.prototype.ativo = function(classe){
+//   this.element.classList.add(classe)
+// }
+// Dom.prototype.ativo.call(h1, 'ativado!');
+// // 
+// console.log(document.querySelector('h1'))
+// // 
+
+// const frutas = ['Uva', 'Banana', 'Maçã'];
+// console.log(frutas)
+
+// Array.prototype.mostrarThis = function(){ 
+//   console.log(this)
+// }
+// Array.prototype.pop.call(frutas);
+// 
+
+// const span = document.querySelectorAll('span');
+// const filtro = Array.prototype.filter.call(span, (item) =>{
+//   return item.classList.contains('aulas');
+// })
+

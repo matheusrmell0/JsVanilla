@@ -10,171 +10,33 @@
 
 <body>
   <ul>
-    <li><a href="#">Item 1</a></li>
+    <li class="Ola"><a href="#">Item 1</a></li>
     <li><a href="#">Item 2</a></li>
     <li><a href="#">Item 3</a></li>
   </ul>
 
-
-  <!-- Brincando 😁 <div>
-    <form id="form">
-      <input type="text" id="campo1">
-      <input type="text" id="campo2">
-      <input type="text" id="campo3">
-      <input type="submit" value="Enviar">
-    </form>
+  <div>
+    <section class="curso">
+      <h1>Web Design Completo</h1>
+      <p>Este curso é para quem deseja entrar ou já está no mercado de criação de websites.</p>
+      <span class="aulas">80</span>
+      <span class="horas">22</span>
+    </section>
+    <section class="curso">
+      <h1>WordPress Como CMS</h1>
+      <p>No curso de WordPress Como CMS, você aprende do zero como pegar qualquer site em HTML e torná-lo totalmente gerenciável com a plataforma do WordPress.</p>
+      <span class="aulas">46</span>
+      <span class="horas">9</span>
+    </section>
+    <section class="curso">
+      <h1>UI Design Avançado</h1>
+      <p>Este é um curso avançado de User Interface Design.</p>
+      <span class="aulas">55</span>
+      <span class="horas">15</span>
+    </section>
   </div>
- <div>
-    <form id="formulario">
-      <input type="text" id="selector">
-      <input type="text" id="className">
-      <input type="text" id="classDelete">
-      <input type="submit" value="Enviar">
-  </form>
-  </div>
 
- <div>
-   <div class="form">
-      <h1>Adicione sua classe e seletor</h1>
-      <form id="formulario">
-        <div class="formul">
-          <label class="class" for="classe">Classe</label>
-          <input type="text" id="classe" name="classe">
-        </div>
-      </form>
-      <form id="formulario">
-        <div class="formul">
-          <label class="seletor" for="seletor">Seletor</label>
-          <input type="text" id="seletor" name="seletor">
-        </div>
-      </form>
-      <button>Enviar</button>
-    </div>
-   <style>
-      button {
-        margin-top: 10px;
-        font-size: 1.2rem;
-        background: #f7f7f7;
-        border: 2px solid #f0f0f0;
-        border-radius: 5px;
-        padding: 10px;
-        cursor: pointer;
-        font-weight: 700;
-      }
-
-      button:hover {
-        background-color: #e2e2e2;
-      }
-
-      label {
-        font-size: 1.5rem;
-        padding: 10px 20px;
-      }
-
-      .formul {
-        display: flex;
-        align-items: center;
-        padding: 15px 20px;
-      }
-
-      body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      }
-
-      .form {
-        display: grid;
-        justify-content: center;
-        width: 500px;
-        border: 1px solid bisque;
-        margin: 0 auto;
-        padding: 20px 20px 40px 20px;
-      }
-
-      input {
-        border: 1px solid #d0d0d0;
-        border-radius: 4px;
-        height: 40px;
-      }
-
-      form {
-        display: grid;
-        border: 2px solid #f0f0f0;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        justify-content: center;
-      }
-    </style>
-   <script>
-      // Teste
-      {
-        const button = document.querySelector("button");
-        const label = document.querySelector(".class");
-        const seletorA = document.querySelector(".seletor");
-
-        function showPower(event) {
-          event.preventDefault();
-          class Dom {
-            constructor(seletor, classeName) {
-              (this.seletor = "li"),
-                (this.class = classeName),
-                (this.element = function () {
-                  return document.querySelector(seletor);
-                });
-              this.addClass = function () {
-                this.element().classList.add(classeName);
-                if (this.element().getElementsByClassName(classeName)) {
-                  return `Classe ${classeName} adicionada com sucesso`;
-                }
-              };
-              function ativarClasse() {
-                const classeEscrita = location.search.toString();
-                classeName = classeEscrita;
-              }
-              ativarClasse();
-            }
-          }
-          new Dom();
-        }
-        button.addEventListener("click", showPower);
-      }
-    </script>
- </div>
- <div>
-    <h1 class="num">0</h1>
-    <button id="btn">Add</button>
-  </div>
-  <style>
-    div {
-      display: grid;
-      gap: 5px;
-    }
-    .num {
-      background-color: red;
-      width: 100px;
-      height: 100px;
-      font-size: 3rem;
-      text-align: center;
-      margin: 0 auto;
-    }
-    #btn {
-      margin: 0 auto;
-      align-items: center;
-      width: 100px;
-      height: 20px;
-    }
-  </style> 
- <script>
-    var initial = 0;
-    let num = document.querySelector(".num");
-    const button = document.getElementById("btn");
-    function acress() {
-      initial++;
-      initial = initial++;
-      num.innerHTML = initial;
-    }
-    btn.addEventListener("click", acress);
-  </script> -->
   <script src="./script.js"></script>
 </body>
-</html>
 
+</html>
