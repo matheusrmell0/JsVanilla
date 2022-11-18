@@ -623,6 +623,133 @@
 // console.log(a.list(), a.addClass()), a.removeClass();
 // //
 
+// function logLivro(nome, ano, autor){
+//   return {
+//     nome: nome.toUpperCase(),
+//     totalAnos: 2050 - ano,
+//     frase: nome + ' ' + ano + ', por ' + autor,
+//   };
+// }
+// const livroRetorno = logLivro('O Senhor dos Anéis', 1954, 'J. R. R. Tolkien');
+// console.log(livroRetorno.frase);
+
+/////////////////////////////////////////////////////
+
+// const div = document.querySelector("#circ");
+// if (10 > 8) {
+//   function mudar(event) {
+//     div.style.top = event.y + "px";
+//     div.style.left = event.x + "px";
+//     div.style.background = "#" + event.x;
+//     div.style.background = "#" + event.y;
+//   }
+//   console.log(div);
+// }
+// window.addEventListener("mousemove", mudar);
+
+// const imagens = Array.from(document.querySelectorAll("#galeria li img"));
+// const principal = document.querySelector("#principal");
+// imagens.forEach(galeriaClick);
+
+// function galeriaClick(imagem) {
+//   imagem.addEventListener("click", galeriaTrocar);
+// }
+
+// function galeriaTrocar(event) {
+//   const target = event.currentTarget;
+//   principal.src = target.src;
+//   principal.setAttribute('alt', target.getAttribute('alt'));
+// }
+
+// // // // // // //
+
+// const lista = ['Item', 'Algo', 'Stuff']
+// for(let index = 0; index < imagens.length; index++){
+//   // console.log(lista[index]);
+// }
+
+// lista.forEach(logar);
+
+// function logar(item, index, array){
+//   // console.log(array, index, item)
+// }
+
+// const links = document.querySelectorAll('nav a');
+
+// function evento (item, link, array){
+//   console.log(item.innerHTML)
+// }
+// links.forEach(evento)
+// //
+
+// const soma = document.querySelector("#addbutton");
+// const zero = document.querySelector("#zero");
+// const estoque = 10;
+
+// if (soma) {
+//   function handleClick() {
+//     const total = Number(zero.innerText) + 1;
+//     if (total < estoque) {
+//       zero.innerText = total;
+//     } else {
+//       console.log("Não foi possível adicionar mais");
+//       soma.innerText = "Is Over!";
+//       soma.style.color = "red";
+//       zero.style.color = "red";
+//     }
+//   }
+// }
+// if (soma) {
+//   soma.addEventListener("click", handleClick);
+// }
+
+// //
+
+// const button = document.querySelector(".button");
+// const texto = document.querySelector(".texto");
+
+// if (button) {
+//   function toggle() {
+//     texto.classList.toggle("ativar");
+//   }
+// }
+
+// if (button) {
+//   button.addEventListener("click", toggle);
+// }
+
+//
+
+// const lista = ["JavaScript", "HTML", "CSS", "Pyton"];
+// const body = document.querySelector("body");
+
+// function adicionarBody(item) {
+//   body.innerHTML += "<li>" + item + "</li>";
+// }
+
+// lista.forEach(adicionarBody);
+
+// for (let i = 0; i < lista.length; i++){
+//   body.innerHTML += '<li>' + lista[i] + '</li>';
+// }
+
+//
+
+// const links = Array.from(document.querySelectorAll("nav a"));
+
+//   function ativarLink(link) {
+//     const href = link.href;
+//     const url = document.location.href;
+//     if (href === url) {
+//       link.style.backgroundColor = 'black';
+//       link.style.color = 'white';
+//       link.style.padding = 3 + 'px';
+//     }
+//   }
+
+// links.forEach(ativarLink);
+//
+
 // class Dom {
 //   constructor(seletor, classe) {
 //     const elementList = document.querySelectorAll(seletor);
@@ -1339,7 +1466,7 @@
 // classeSelecionar.ativo.call(h1, 'ativo');
 // console.log(classeSelecionar.ativo('ativo'))
 // console.log(classeSelecionar.element)
-// 
+//
 
 // const h1 = {
 //   element: document.querySelector('h1'),
@@ -1353,21 +1480,453 @@
 //   this.element.classList.add(classe)
 // }
 // Dom.prototype.ativo.call(h1, 'ativado!');
-// // 
+// //
 // console.log(document.querySelector('h1'))
-// // 
+// //
 
 // const frutas = ['Uva', 'Banana', 'Maçã'];
 // console.log(frutas)
 
-// Array.prototype.mostrarThis = function(){ 
+// Array.prototype.mostrarThis = function(){
 //   console.log(this)
 // }
 // Array.prototype.pop.call(frutas);
-// 
+//
 
 // const span = document.querySelectorAll('span');
 // const filtro = Array.prototype.filter.call(span, (item) =>{
 //   return item.classList.contains('aulas');
 // })
 
+// const carros = ['Ford', 'Fiat', 'VW'];
+// const frutas = ['Banana', 'Uva', 'Pêra'];
+
+// const arrayLike = {
+//   0: "Item1",
+//   1: "Item2",
+//   2: "Item3",
+//   3: "Item4",
+//   4: "Item5",
+//   length: 5,
+// };
+// // Object.prototype.mostrarThis = function (){
+// //   console.log(this)
+// // }
+// // Array.prototype.pop.call(arrayLike);
+
+// const filtro = Array.prototype.filter.call(arrayLike, (item) => {
+//   return item === 'Item3';
+// });
+
+// const numeros = [33, 23, 131, 12545, 12, 29912, 22145];
+// const mathCall = Math.max.call(null, 33, 23, 131, 12545, 12, 29912, 22145);
+// const mathApply = Math.max.apply(null, numeros);
+// console.log(mathCall, mathApply)
+
+// const section = document.querySelectorAll('section');
+// function itemPossuiAtivo(item){
+//   return item.classList.contains('ativo');
+// }
+
+// const filtro1 = Array.prototype.filter.call(section, itemPossuiAtivo);
+// const filtro2 = Array.prototype.filter.apply(section, [itemPossuiAtivo]);
+// console.log(filtro1, filtro2)
+// //
+
+// const $ = document.querySelectorAll.bind(document);
+// console.log($, $('section'));
+
+// const carro ={
+//   marca: 'Ford',
+//   ano: 2018,
+//   acelerar: function(aceleracao, tempo){
+//     return `${this.marca} acelerou ${aceleracao}km em ${tempo}s`;
+//   }
+// };
+
+// const honda = {
+//   marca: 'Honda',
+// };
+// const tesla = {
+//   marca: 'Tesla',
+// };
+// const fiat = {
+//   marca: 'Fiat',
+// };
+
+// const acelerarHonda = carro.acelerar.bind(honda);
+// const acelerarHondaCall = carro.acelerar.call(tesla, 130, 22);
+// const acelerarHondaApply = carro.acelerar.apply(fiat,[20, 50]);
+// console.log(acelerarHonda(200, 30));
+// console.log(acelerarHondaCall);
+// console.log(acelerarHondaApply)
+// //
+
+// function imc(altura, peso){
+//   return peso / (altura * altura);
+// };
+
+// const imc180 = imc.bind(null, 1.80);
+// const iMc = imc(1.80, 70);
+// const iMc180 = imc180(70);
+
+// console.log(iMc.toFixed(2), iMc180.toFixed(2));
+// //
+
+// const p = document.querySelectorAll("p");
+// const totalCaracteres = Array.prototype.reduce.call(p, (zero, item) => {
+//   const itemString = (this.item = item.innerText);
+//   return itemString.length + zero;
+// }, 0);
+
+// console.log(totalCaracteres);
+// //
+
+// function getElement(tag, classe, conteudo){
+//   const tagHTMML = document.createElement(tag);
+//   classe ? tagHTMML.classList.add(classe) : null;
+//   conteudo ? tagHTMML.innerHTML = conteudo : null;
+//   return tagHTMML;
+//  };
+
+// console.log(getElement('p','font-xxl','Teste'));
+// //
+
+// const getElementObj = {
+//   tag: 'div',
+//   classe: 'titulo',
+//   id: function getElement(tag, classe, conteudo){
+//     const tagHTMML = document.createElement(tag);
+//     classe ? tagHTMML.classList.add(classe) : null;
+//     conteudo ? tagHTMML.innerHTML = conteudo : null;
+//     return tagHTMML;
+//    },
+// }
+
+// const getElementNewApply = getElementObj.id('div', 'container', 'Teste')
+// console.log(getElementNewApply)
+
+// const getElementNew = getElement.bind(null, 'h1', 'titulo');
+// console.log(getElementNew('Teste de Bind'));
+// //
+
+// const carro = {
+//   rodas: 4,
+//   init(valor) {
+//     this.marca = valor;
+//     return this; // Retornando ao objeto inteiro (typeof = Object)
+//   },
+//   acelerar() {
+//     return this.marca + " acelerou";
+//   },
+//   buzinar() {
+//     return this.marca + " buzinou";
+//   }
+// };
+
+// const honda = Object.create(carro).init('Honda');;
+// console.log(honda.acelerar());
+
+// const ferrari = Object.create(carro).init('Ferrari');;
+// console.log(ferrari.acelerar());
+
+// // const honda = Object.create(carro);
+// // honda.marca = "Honda";
+// // console.log(honda.acelerar());
+// // console.log(carro.acelerar());
+//
+
+// const funcaoAutomovel = {
+//   acelerar(){
+//     return this.marca + ' acelerou';
+//   },
+//   buzinar(){
+//     return ' buzinou'
+//   },
+//   init(valor){
+//     this.marca = valor;
+//   }
+// }
+
+// const moto = {
+//   marca: this.marca,
+//   rodas: 2,
+//   capacete: true,
+// }
+
+// Object.assign(moto, funcaoAutomovel).init('GPG');
+// console.log(moto.acelerar());
+// //
+
+// const moto = {};
+// Object.defineProperties(moto, {
+//   rodas: {
+//     value: 2,
+//     configurable: false,
+//     writable: false,
+//   },
+//   capacete: {
+//     value: true,
+//     configurable: false,
+//     writable: true,
+//   },
+// });
+// moto.capacete = false;
+// // delete moto.capacete;
+// console.log(moto);
+
+// const moto = {};
+
+// Object.defineProperties(moto, {
+//   rodas: {
+//     get(){
+// return this._rodas
+//     },
+//     set(valor){
+// this._rodas = valor * 4 + ' total rodas';
+//     }
+//   }
+// });
+
+// console.log(moto.rodas = 4);
+// console.log(moto.rodas);
+// //
+
+// console.log(Object.getOwnPropertyDescriptors(Array));
+// console.log(Object.getOwnPropertyDescriptors(Array.prototype));
+// console.log(Object.getOwnPropertyDescriptors(window));
+//
+
+// const moto = {};
+
+// Object.defineProperties(moto, {
+//   rodas: {
+//     enumerable: true,
+//     get(){
+// return this._rodas
+//     },
+//     set(valor){
+// this._rodas = valor * 4 + ' total rodas';
+//     }
+//   }
+// });
+
+// console.log(Object.keys(moto));
+// console.log(Object.values(moto));
+// console.log(Object.entries(moto));
+// //
+
+// console.log(Object.getOwnPropertyNames(Array)) //Puxa os enumerable: false
+// console.log(Object.getOwnPropertyNames(Array.prototype)) //Puxa os enumerable: false
+
+// const frutas = ['Banana']
+
+// console.log(Object.getPrototypeOf(frutas));
+// console.log(Object.getPrototypeOf('frutas'));
+
+// const frutas1 = ['Banana', 'Melao'];
+// const frutas2 = ['Banana', 'Melao'];
+// const novasFrutas = frutas1;
+
+// console.log(Object.is(frutas1, frutas2));
+// console.log(Object.is(frutas1, novasFrutas));
+
+// const carro ={
+//   marca: 'Ford',
+//   ano: 2022,
+// }
+
+// Object.freeze(carro);
+// Object.seal(carro);
+// Object.preventExtensions(carro);
+
+// console.log(carro);
+// console.log(Object.isFrozen(carro));
+// console.log(Object.isSealed(carro));
+// console.log(Object.isExtensible(carro));
+//
+
+// const frutas = ['Banana', 'Perâ'];
+// console.log(frutas.hasOwnProperty('map'));
+// console.log(Array.prototype.hasOwnProperty('map'));
+// console.log(Array.prototype.isPrototypeOf(frutas));
+// console.log(frutas.toString());
+// console.log(Object.prototype.toString.call(frutas));
+//
+
+//
+// function thisDadoIs(dado) {
+//   return Object.prototype.toString.call(dado);
+// }
+// console.log(thisDadoIs(""));
+// //
+
+// const quadrado = {};
+// Object.defineProperties(quadrado, {
+//   lados: {
+//     configurable: false, // Default
+//     writable: false, // Default
+//     enumerable: true, // Not default
+//     value: 4,
+//   },
+//   ladosQuadrado: function (comp){
+//     area = comp * lados.value;
+//     return area;
+//   }
+// });
+// console.log(quadrado);
+// // console.log(Object.prototype.toString.call(quadrado.ladosQuadrado))
+
+// const configuracao = {
+//   width: 800,
+//   height: 600,
+//   background: '#333',
+// }
+// Object.freeze(configuracao);
+// //
+
+// console.log(Object.getOwnPropertyDescriptors(String));
+// console.log(Object.getOwnPropertyDescriptors(Array));
+// console.log(Object.getOwnPropertyNames(String.prototype));
+// console.log(Object.getOwnPropertyNames(Array.prototype));
+// //
+
+// DOMMMM
+// // Outside-Click
+// export default function outsideClick(item, events, callBack) {
+//   const outside = "data-outside";
+//   const htmlPage = document.documentElement;
+
+//   if (!item.hasAttribute(outside)) {
+//     events.forEach(userEvent =>{
+//       htmlPage.addEventListener(userEvent, closedMenu);
+//     });
+//     item.setAttribute(outside, "");
+//   }
+
+//   function closedMenu(event) {
+//     if (!item.contains(event.target)) {
+//       item.removeAttribute(outside);
+//       events.forEach(userEvent =>{
+//         htmlPage.removeEventListener(userEvent, closedMenu);
+//       });
+//       callBack();
+//     }
+//   }
+// }
+//
+
+// settimeOuttttt
+// function espera(texto) {
+//   console.log(texto);
+// }
+// setTimeout(espera, 3000, "Texto depois de 3s");
+// //
+// setTimeout(() => {
+//   console.log("Texto depois de 2s");
+// }, 2000);
+
+// for(let i = 0; i <= 10; i++){
+//   setTimeout(()=>{
+// console.log(i)
+//   }, 1000 * i);
+// }
+// //
+
+// const button = document.querySelector('button');
+// function click(){
+// setTimeout(()=>{
+//   this.classList.add('ativo');
+//   console.log(this);
+// }, 1000)};
+// button.addEventListener('click', click);
+// //
+
+// const button = document.querySelector('button');
+// function click(){
+// setInterval(()=>{
+//   this.classList.add('ativo');
+//   console.log(this);
+// }, 1000)};
+// button.addEventListener('click', click);
+// //
+
+// let s = 0;
+// setInterval((time)=>{
+//   console.log('Passou', s++,time);
+// }, 1000, 'segundos');
+//
+
+// let i = 0;
+
+// const segundos = setInterval((time)=>{
+//   console.log('Passou', i++,time);
+//   if(i > 10){
+//     clearInterval(segundos)
+//     }
+// }, 1000, 'segundos');
+// //
+
+// let i = 0;
+// const body = document.querySelector("body");
+// function bodyColorChange(item) {
+//   for(let i = 0; i <= 20; i++){setTimeout(() => {
+//     if(i % 2 === 0){
+//     item.style.background = "red";
+//   } else{
+//     item.style.background = "blue";
+//   }
+//   }, 2000 * i)};
+// }
+// bodyColorChange(body);
+// // 
+
+// const btn = document.querySelector('button');
+// function eventsList(eventT){
+//   ['click'].forEach((event)=>{
+//     btn.addEventListener(event, eventT)
+//   });
+// }
+// eventsList(timeOn);
+
+// function timeOn(){
+//   let i = 0;
+//   const cronomet = setInterval((time)=>{
+//     console.log('Passou', i++,time);
+//   }, 1000, 'segundos');
+//   function timeOut(){
+//     setTimeout(cronomet);
+//    };   
+//    const button = document.querySelector('button');
+//    button.addEventListener('dblclick', timeOut);
+// };
+// 
+
+// const iniciar = document.querySelector('.iniciar');
+// const pausar = document.querySelector('.pausar');
+// const text = document.querySelector('.tempo');
+
+// iniciar.addEventListener('click', iniciarTempo);
+// pausar.addEventListener('click', pausarTempo);
+// pausar.addEventListener('dblclick', resetarTempo);
+
+// let i = 0;
+// let timer;
+
+// function iniciarTempo(){
+// timer = setInterval(()=>{
+//   text.innerText = i++;
+// }, 100);
+// iniciar.setAttribute('disabled', '')
+// }
+
+// function pausarTempo(){
+//   clearInterval(timer);
+//   iniciar.removeAttribute('disabled')
+// }
+
+// function resetarTempo(){
+//   text.innerText = 0;
+//   i = 0;
+// }
+// // 
