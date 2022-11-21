@@ -1879,7 +1879,7 @@
 //   }, 2000 * i)};
 // }
 // bodyColorChange(body);
-// // 
+// //
 
 // const btn = document.querySelector('button');
 // function eventsList(eventT){
@@ -1896,11 +1896,11 @@
 //   }, 1000, 'segundos');
 //   function timeOut(){
 //     setTimeout(cronomet);
-//    };   
+//    };
 //    const button = document.querySelector('button');
 //    button.addEventListener('dblclick', timeOut);
 // };
-// 
+//
 
 // const iniciar = document.querySelector('.iniciar');
 // const pausar = document.querySelector('.pausar');
@@ -1929,4 +1929,105 @@
 //   text.innerText = 0;
 //   i = 0;
 // }
-// // 
+// //
+
+//
+// const now = new Date();
+// const future = new Date("Dec 24 2022 23:59");
+// //
+// const nowDia = now.getDate();
+// const nowDiaSemana = now.getDay();
+// const nowMes = now.getMonth();
+// const nowAnoInteiro = now.getFullYear();
+// const nowHora = now.getHours();
+// const nowMinuto = now.getMinutes();
+// const nowSince1970 = now.getTime();
+// const nowUTCHora = now.getUTCHours() - 3;
+
+// console.log(now);
+// console.log(future);
+// console.log(future.getTime());
+// console.log(nowDiaSemana);
+// console.log(nowMes);
+// console.log(nowAnoInteiro);
+// console.log(nowHora);
+// console.log(nowMinuto);
+// console.log(nowSince1970);
+// console.log(nowUTCHora) ;
+//
+//
+// const hoje = now.getTime();
+// const futuro = future.getTime();
+
+// function natal2022(today, futureday) {
+//   return `Faltam ${Math.floor(futureday / (24 * 60 * 60 * 1000) - today / (24 * 60 * 60 * 1000))} dias para o natal 2022`
+// }
+// const natalCountDown = natal2022(hoje, futuro);
+// console.log(natalCountDown);
+// //
+//
+// console.log(document.forms[0])
+// console.log(document.forms[0].elements.nome.value)
+
+// const texto = document.querySelector(".texto");
+// const formulario = document.forms[0];
+
+// function handleKeyUp(event) {
+//   const target = event.target;
+//   document.body.style.backgroundColor = target.value;
+
+//   if(event.target.checked){
+//     console.log(event.target.value)
+//   }
+  // const input = document.querySelectorAll('input');
+
+  // document.querySelectorAll("#cores").forEach((cores)=>{
+  //   document.body.style.backgroundColor = `${cores.value}`
+  // });
+
+//   if (!target.checkValidity()) {
+//     target.classList.add("invalido");
+//     formulario.nome.setCustomValidity("Não deixe de preencher este campo");
+//     target.nextElementSibling.innerText = target.validationMessage;
+//   }
+//   return (texto.innerText = event.target.value);
+// }
+
+
+// const dados = {}
+// function handleChange(event){
+//   dados[event.target.name] = event.target.value;
+//   console.log(dados);
+// }
+
+
+// [handleKeyUp, handleChange].forEach((funcoes)=>{
+//   document.forms[0].addEventListener("change", funcoes);
+// });
+//
+
+// 
+// const contato = document.querySelector('#contato')
+
+// function changeColor(event){
+// console.log(event.target.value)
+// document.body.style.backgroundColor = event.target.value;
+// }
+
+// contato.addEventListener('change', changeColor);
+// 
+// function handleChange(event) {
+    //   const name = event.target.name;
+    //   const value = event.target.value;
+    //   dadosCss[name] = value;
+  
+    //   btn.innerText = dadosCss['texto'];
+    //   btn.style.color = dadosCss['color'];
+    //   btn.style.backgroundColor = dadosCss['backgroundColor'];
+    //   btn.style.width = `${+dadosCss['width']}px`;
+    //   btn.style.height = `${+dadosCss['height']}px`;
+    //   btn.style.border = dadosCss['border'];
+    //   btn.style.borderRadius = `${+dadosCss['borderRadius']}px`;
+    //   btn.style.fontFamily = dadosCss['fontFamily'];
+    //   btn.style.fontSize = `${+dadosCss['fontSize']}rem`;
+    // }
