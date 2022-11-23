@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch</title>
+</head>
+
+<body>
+  <div class="grid">
+    <form action="./fetch/fetch.html">
+      <label for="cep">CEP</label>
+      <input type="text" name="cep" id="cep" placeholder="CEP">
+    </form>
+    <button class="button">Enviar</button>
+    <div class="endereco"></div>
+  </div>
+
+<div class="grid">
+  <h1>O valor de compra do bitcoin é de:</h1>
+  <span class="bitcoin"></span>
+  <h1>O valor de compra do bitcoin em reais é de:</h1>
+  <span class="bitcoinReal"></span>
+</div>
+
+<div class="grid">
+  <span class="joke"></span>
+  <button class="button2">Proxima</button>
+</div>
+
+<h1 class="btc"></h1>
+
+  <style>
+    body {
+      margin-top: 30px;
+      background: #999;
+    }
+    h1{
+      font-size: 1.2rem;
+    }
+    span{
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+    .grid {
+      display: grid;
+      justify-content: center;
+      gap: 10px;
+    }
+    form {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+    }
+    label {
+      display: grid;
+      text-align: center;
+    }
+    button {
+      cursor: pointer;
+      border: 3px solid gray;
+      border-radius: 5px;
+      justify-self: center;
+      text-align: center;
+      margin: 0 auto;
+      padding: 5px 30px;
+    }
+    .joke{
+      border: 1px solid gray;
+      padding: 1rem;
+    }
+    input {
+      justify-self: center;
+      text-align: center;
+    }
+    .endereco {
+      text-align: center;
+      text-transform: uppercase;
+      border: 1px solid gray;
+      padding: 1rem;
+    }
+  </style>
+  <script src="./script-fetch.js"></script>
+  <script>
+    const input = document.getElementById("cep");
+const btn = document.querySelector(".button");
+const div = document.querySelector(".endereco");
+
+function cepShow(event) {
+  event.preventDefault();
+  const valor = input.value;
+  valor.split('-').join('')
+  function cepFound(cep) {
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+      .then((r) => r.text())
+      .then((r) => {
+        const newR = r
+          .split("{")
+          .join("")
+          .split('"')
+          .join("")
+          .split(",")
+          .join("<br>")
+          .split("}")
+          .join("");
+        div.innerHTML = newR;
+      });
+  }
+  cepFound(valor);
+}
+btn.addEventListener("click", cepShow);
+//
+
+const bitcoinDom = document.querySelector(".bitcoin");
+const realDom = document.querySelector(".bitcoinReal");
+
+function bitcoinPerDay() {
+  fetch("https://blockchain.info/ticker")
+    .then((r) => r.json())
+    .then((r) => {
+      bitcoinDom.innerHTML = `${r.BRL.buy}`;
+      realDom.innerHTML = `${Math.floor(r.BRL.buy)
+        .toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      })}`;
+    });
+}
+setInterval(bitcoinPerDay, 8.64e+7)
+bitcoinPerDay()
+
+//
+const jokeDom = document.querySelector(".joke");
+const btn2 = document.querySelector(".button2");
+
+btn2.addEventListener("click", (event) => {
+  event.preventDefault();
+  fetch("https://api.chucknorris.io/jokes/random")
+    .then((r) => r.json())
+    .then((r) => (jokeDom.innerHTML = r.value));
+});
+  </script>
+</body>
+</html>

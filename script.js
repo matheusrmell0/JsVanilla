@@ -1979,11 +1979,11 @@
 //   if(event.target.checked){
 //     console.log(event.target.value)
 //   }
-  // const input = document.querySelectorAll('input');
+// const input = document.querySelectorAll('input');
 
-  // document.querySelectorAll("#cores").forEach((cores)=>{
-  //   document.body.style.backgroundColor = `${cores.value}`
-  // });
+// document.querySelectorAll("#cores").forEach((cores)=>{
+//   document.body.style.backgroundColor = `${cores.value}`
+// });
 
 //   if (!target.checkValidity()) {
 //     target.classList.add("invalido");
@@ -1993,20 +1993,18 @@
 //   return (texto.innerText = event.target.value);
 // }
 
-
 // const dados = {}
 // function handleChange(event){
 //   dados[event.target.name] = event.target.value;
 //   console.log(dados);
 // }
 
-
 // [handleKeyUp, handleChange].forEach((funcoes)=>{
 //   document.forms[0].addEventListener("change", funcoes);
 // });
 //
 
-// 
+//
 // const contato = document.querySelector('#contato')
 
 // function changeColor(event){
@@ -2014,20 +2012,162 @@
 // document.body.style.backgroundColor = event.target.value;
 // }
 
-// contato.addEventListener('change', changeColor);
+// const text = document.querySelector('.text');
+// const value = document.querySelector('.value');
+// const controls = document.querySelector('.controls');
+// const arrayList = {};
+
+// function createArrayList(name, value) {
+//   arrayList[name] = value;
+//   setInterval(()=>{
+//     saveLocalStorage(name, value);
+//   }, 0.1);
+//   setLocalStorageValues();
+// }
+
+// function saveLocalStorage(name, value) {
+//   localStorage[name] = value;
+// }
+
+// function setLocalStorageValues() {
+//   const keysName = Object.keys(localStorage);
+//   keysName.forEach((key) => {
+//    arrayList[key] = localStorage[key];
+//    console.log(key);
+//   });
+// }
+
+// createArrayList('nome','mello')
+// createArrayList('idade', 24);
+// createArrayList('color', 'white');
+// createArrayList('country', 'brazil')
+//
+
+//  Java Script Assíncrono
+
+// const promise = new Promise((resolve, reject) =>  {
+//   let condicao = true;
+//   if (condicao) {
+//     resolve({ nome: "Mello", idade: 24, nacionalidade: "Brasileira" });
+//   } else reject(Error("Um erro ocorreu na promise"));
+// });
+
+// promise.then(resolucao => console.log(resolucao));
+//
+
+// const promise = new Promise((resolve, reject) =>  {
+//   let condicao = true;
+//   if (condicao) {
+//     setTimeout(() =>{resolve({ nome: "Mello", idade: 24, nacionalidade: "Brasileira" })}, 1000);
+//   } else reject(Error("Um erro ocorreu na promise"));
+// });
+
+// const retorno = promise.then(resolucao => {
+//   console.log(resolucao);
+//   return resolucao;
+// }).then(resolucao => {
+//   console.log(resolucao)
+// })
+
+// console.log(retorno)
+//
+
+// const promise = new Promise((resolve, reject) =>  {
+//   let condicao = false;
+
+//   if (condicao) {
+//     setTimeout(() =>{resolve({ nome: "Mello", idade: 24, nacionalidade: "Brasileira" })}, 1000);
+//   } else reject(Error("Um erro ocorreu na promise"));
+// });
+
+// const retorno = promise
+// .then(resolucao => {
+//   console.log(resolucao)
+//   resolucao.renda = 3000
+//   return resolucao
+// })
+// .then(resolucao => {console.log(resolucao)})
+// .catch(rejeitada => console.log(rejeitada))
+
+// console.log(retorno);
+//
+
+// const promise = new Promise((resolve, reject) =>  {
+//   let condicao = false;
+
+//   if (condicao) {
+//     setTimeout(() =>{resolve({ nome: "Mello", idade: 24, nacionalidade: "Brasileira" })}, 1000);
+//   } else reject(Error("Um erro ocorreu na promise"));
+// });
+
+// const retorno = promise
+// .then(resolucao => {
+//   console.log(resolucao)
+//   resolucao.renda = 3000
+//   return resolucao
+// })
+// .then((resolucao, rejeitado) =>{
+//   console.log(resolucao)
+// }, rejeitado => {
+//   console.log(rejeitado)
+// })
+// .finally(() =>{
+//   console.log('Acabou')
+// })
+
+// console.log(retorno);
+// //
+
+// const login = new Promise((resolve) => {
+//   setTimeout(() => {
+//     resolve("Usuário Logado");
+//   }, 1000);
+// });
+
+// const dados = new Promise((resolve) => {
+//   setTimeout(() => {
+//     resolve("Dados carregados");
+//   }, 1500);
+// });
+
+// const carregouTudo = Promise.all([login, dados])
+
+// carregouTudo.then((resolucao) => {
+//   console.log(resolucao);
+// });
 // 
-// function handleChange(event) {
-    //   const name = event.target.name;
-    //   const value = event.target.value;
-    //   dadosCss[name] = value;
-  
-    //   btn.innerText = dadosCss['texto'];
-    //   btn.style.color = dadosCss['color'];
-    //   btn.style.backgroundColor = dadosCss['backgroundColor'];
-    //   btn.style.width = `${+dadosCss['width']}px`;
-    //   btn.style.height = `${+dadosCss['height']}px`;
-    //   btn.style.border = dadosCss['border'];
-    //   btn.style.borderRadius = `${+dadosCss['borderRadius']}px`;
-    //   btn.style.fontFamily = dadosCss['fontFamily'];
-    //   btn.style.fontSize = `${+dadosCss['fontSize']}rem`;
-    // }
+
+// let condicao = true;
+
+// const login = new Promise((resolve, reject) => {
+//   if(condicao){
+//   setTimeout(() => {
+//     resolve("Usuário Logado");
+//   }, 1000);
+// } else {
+//   reject(Error('Resolve não funcionou'))
+// }
+// });
+
+// const dados = new Promise((resolve) => {
+//   if(condicao){
+//   setTimeout(() => {
+//     resolve("Dados carregados");
+//   }, 500);
+//   }
+//   else {
+//     reject(Error('Resolve não funcionou novamente'))
+//   }
+// });
+
+// const carregouTudo = Promise.race([login, dados])
+
+// carregouTudo.then((resolucao, reject) => {
+//   console.log(resolucao);
+// }, reject => {console.log(reject)}
+// );
+// 
+
+//  Fetch APIIIIII
+// 
+
