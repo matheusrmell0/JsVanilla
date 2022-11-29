@@ -2135,7 +2135,7 @@
 // carregouTudo.then((resolucao) => {
 //   console.log(resolucao);
 // });
-// 
+//
 
 // let condicao = true;
 
@@ -2166,8 +2166,525 @@
 //   console.log(resolucao);
 // }, reject => {console.log(reject)}
 // );
-// 
+//
 
 //  Fetch APIIIIII
+//
+
+// const habilidade = document.querySelector('.habilidade')
+//  const pokemon = document.querySelector('.pokemon')
+
+//     function pokemonNome(nomePokemon) {
+//       fetch(`https://pokeapi.co/api/v2/pokemon/${nomePokemon}`)
+//         .then((r) => {
+//           r.json()
+//             .then(r => {
+//               const hab = pokemon.innerHTML = `O pokemon ${r.name} tem a habilidade ${r.abilities[1].ability.name}`
+//               fetch(r.abilities[1].ability.url).then(r => {
+//                 r.json().then(r => {
+//                   const habilidadeDesc = r.effect_entries[1].effect;
+//                   habilidade.innerHTML = r.effect_entries[1].effect;
+//                 })
+//               })
+//             })
+//         })
+//     }
+//     pokemonNome('4')
+
+// Classessss
+
+// function Button(text, background){
+//   this.text = text;
+//   this.background = background;
+// }
+
+// Button.prototype.element = function(){
+//   const button = document.createElement('button')
+//   button.style.background = this.background
+//   button.innerText = this.text
+//   return button
+// }
+
+// const blueButton = new Button('Ola', 'blue');
+// console.log(blueButton.element())
+
+// class Button {
+//   constructor(text, background, color) {
+//     this.text = text;
+//     this.background = background;
+//     this.color = color;
+//     // return this.element();
+//   }
+//   element() {
+//     const buttonElement = document.createElement("button");
+//     buttonElement.innerText = this.text;
+//     buttonElement.style.background = this.background;
+//     buttonElement.style.color = this.color;
+//     return buttonElement;
+//   }
+//   appendTo(target) {
+//     const targetElement = document.querySelector(target);
+//     targetElement.appendChild(this.element());
+//   }
+// }
+// const blueButton = new Button("Comprar", "blue", "white");
+// console.log(blueButton.appendTo('body'));
+
+// class Button {
+//   constructor(optionsObj) {
+//     this.optionsObj = optionsObj;
+//   }
+// }
+
+// const optionsBlue = {
+//   backgroundColor: "blue",
+//   text: "Comprar",
+//   color: "white",
+// };
+
+// const blueButton = new Button(optionsBlue);
+// console.log(blueButton);
+
+// class Button {
+//   constructor(optionsObj) {
+//     this.optionsObj = optionsObj;
+//   }
+//   static createButton(text, background, color){
+//     const buttonElement = document.createElement("button");
+//     buttonElement.innerText = text;
+//     buttonElement.style.color = color;
+//     buttonElement.style.background = background;
+//     return buttonElement;
+//   }
+// }
+// const optionsBlue = {
+//   backgroundColor: "blue",
+//   text: "Comprar",
+//   color: "white",
+// };
+
+// const blueButton = new Button(optionsBlue);
+// const blueButtonStatic = Button.createButton('Voltar', 'blue', 'white');
+
+// console.log(blueButtonStatic);
+// console.log(blueButton);
+
+// class Button {
+//   constructor(text, background, color) {
+//     this.text = text;
+//     this.background = background;
+//     this.color = color;
+//     // return this.element();
+//   }
+//   element() {
+//     const buttonElement = document.createElement("button");
+//     buttonElement.innerText = this.text;
+//     buttonElement.style.background = this.background;
+//     buttonElement.style.color = this.color;
+//     return buttonElement;
+//   }
+//   appendTo(target) {
+//     const targetElement = document.querySelector(target);
+//     targetElement.appendChild(this.element());
+//   }
+//   static blueButton(text) {
+//     return new Button(text, 'blue', 'white')
+//   }
+// }
+
+// const blueButtonStatic = Button.blueButton('Vender')
+// console.log(blueButtonStatic.appendTo('body'))
+//
+
+// const button = {
+//   get tamanho() {
+//     return this._numero || 100;
+//   },
+//   set tamanho(numero){
+//     this._numero = numero
+//   }
+// };
+
+//  const frutas = {
+//   lista: [],
+//   set nova(fruta){
+//     this.lista.push(fruta)
+//   }
+//  }
+//  frutas.nova = 'Banana';
+//  frutas.nova = 'Morango';
+
+// class Button{
+//   constructor(text, color, target){
+//     this.text = text;
+//     this.color = color;
+//     this.target = target;
+//   }
+//   get element(){
+//     const type = this._elementType || 'button';
+//     const buttonElement = document.createElement(type);
+//     buttonElement.innerText = this.text;
+//     buttonElement.style.color = this.color;
+//     document.querySelector(this.target).appendChild(buttonElement)
+//     return buttonElement;
+//   }
+//   set element(type){
+//     this._elementType = type;
+//   }
+// }
+
+// const redButton = new Button('Comprar', 'red', 'body')
+// console.log(redButton)
+
+// class Veiculo {
+//   constructor(rodas, combustivel) {
+//     this.rodas = rodas || 2;
+//     this.combustivel = combustivel
+//   }
+//   acelerar() {
+//     console.log("Acelerou");
+//   }
+//   get arrancou() {
+//     console.log(`Arrancou com ${this.rodas} rodas`);
+//   }
+// }
+
+// class Moto extends Veiculo {
+//   constructor(rodas, combustivel, capacete) {
+//     super(rodas, combustivel);
+//     this.capacete = capacete;
+//   }
+//   acelerar() {
+//     super.acelerar();
+//     console.log("Acelerou rapido");
+//   }
+//   get empinar() {
+//     console.log("Moto empinou com " + this.rodas + " rodas");
+//   }
+// }
+
+// const honda = new Moto(2, 'Gasolina',true);
+// const civic = new Veiculo(5).arrancou;
+
+// Remova o erro
+// const priceNumber = n => +n.replace('R$', '').replace(',', '.');
+// console.log(priceNumber('R$ 99,99'));
+
+// // Crie uma IIFE e isole o escopo
+// (() => {
+//   const nome = 'Mello'
+//   console.log(nome)
+// })();
+// // de qualquer código JS.
+
+// // Como podemos utilizar
+// // a função abaixo.
+// const active = callback => callback();
+// active(()=>{console.log('Ola')})
+
+// function createButton(text) {
+//   function ola(){
+//     console.log('Ola')
+//   }
+//   const obj = {
+//     text: text,
+//     createElement: function (element) {
+//       const buttonElement = document.createElement(element);
+//       buttonElement.innerText = text;
+//       return buttonElement
+//     },
+//   };
+//   return {
+//     obj,
+//     ola
+//   }
+// }
+
+// const btnComprar = createButton("Comprar").createElement('button');
+// const btnVender = createButton("Vender").createElement('button');
+
+// console.log(btnComprar)
+// console.log(btnVender)
+
+// class BtnClass{
+//   constructor(text, element){
+//     this.text = text
+//     this.element = element
+//   }
+//   get _createElement(){
+//     const buttonElement = document.createElement(this.element);
+//     buttonElement.innerText = this.text;
+//     return buttonElement
+//   }
+// }
+
+// const blueBtn = new BtnClass('Comprar', 'button')
+// console.log(blueBtn._createElement)
+
+// function criadorDeBotao(text, elemento) {
+//   function element() {
+//     const buttontElement = document.createElement(elemento);
+//     buttontElement.innerText = text;
+//     return buttontElement
+//   }
+//   return {
+//     text,
+//     element,
+//   }
+// }
+// const btnBlue = criadorDeBotao('Comprar','button')
+// console.log(btnBlue)
+// console.log(btnBlue.element())
+
+// function createPerson(nome, sobrenome){
+//   const secretNumber = '0012992318'
+//   const nomeCompleto = `${nome} ${sobrenome}`;
+
+//   function andar(){
+//     return `${nomeCompleto} andou`;
+//   }
+//   function nadar(){
+//     return `${nomeCompleto} nadou`;
+//   }
+//   return Object.freeze({
+//     nome,
+//     sobrenome,
+//     andar,
+//     nadar,
+//   })
+// }
+// const mySelf = createPerson('Matheus','Mello')
+// console.log(mySelf.andar())
+
+// function createButton(text){
+//   function element(){
+//     const buttonElement = document.createElement('button')
+//     buttonElement.innerText = text
+//     return buttonElement
+//   }
+//   return {
+//     text,
+//    element
+//   }
+// }
+// const btnComprar = createButton('Comprar')
+// console.log(btnComprar)
+
+// jQuery backgroundddd
+
+// function $$(selectedElements) {
+//   const element = document.querySelectorAll(selectedElements);
+
+//   function hide() {
+//     element.forEach((element) => (element.style.display = "none"));
+//     return this;
+//   }
+//   function show() {
+//     element.forEach((element) => (element.style.display = "initial"));
+//     return this;
+//   }
+//   function addClass(classe) {
+//     element.forEach((element) => element.classList.add(classe));
+//     return this;
+//   }
+//   function removeClass(classe) {
+//     element.forEach((element) => element.classList.remove(classe));
+//     return this;
+//   }
+//   function onEvent(event, callBack) {
+//     element.forEach((element) => element.addEventListener(event, callBack));
+//     return this;
+//   }
+
+//   return {
+//     hide,
+//     show,
+//     addClass,
+//     removeClass,
+//     onEvent,
+//   };
+// }
+
+// const btn = $$("button");
+// console.log(btn);
+
+// btn.onEvent('click', ((event)=>{console.log(event.target)}))
+
+// Debuggin e Closuresssss
+
+// debugger;
+// let item1 = 1;
+// function funcao1() {
+//   let item2 = 2;
+//   function funcao2() {
+//     let item3 = 3;
+//     console.log(item1);
+//     console.log(item2);
+//     console.log(item3);
+//   }
+//   funcao2();
+// }
+// funcao1();
+
+// debugger
+// function contagem(){
+//   let total = 0
+//   return function incremento(){
+//     total++;
+//     console.log(total)
+//   }
+// }
+// const ativarIncremento = contagem()
+// ativarIncremento();
+// ativarIncremento();
+// ativarIncremento();
+// ativarIncremento();
+ 
+// Destructuringgggg
 // 
 
+// const cliente = {
+//   nome: 'Mello',
+//   compras: {
+//     digitais: {
+//       livros: ['Livro 1', 'Livro 2'],
+//       videos: ['Video JS', 'Video HTML']
+//     },
+//     fisicas: {
+//       cadernos: ['Caderno 1', 'Caderno 2']
+//     }
+//   }
+// }
+
+// // const {livros, videos} = cliente.compras.digitais;
+// // console.log(livros)
+
+// const {digitais, fisicas, digitais: {livros , videos}} = cliente.compras;
+// console.log(digitais)
+// console.log(fisicas)
+// console.log(livros)
+// console.log(videos)
+
+// const cliente = {
+//   nome: 'Mello',
+//   compras: 5,
+// }
+
+// const {nome: nomeMatheus, email = 'email@gmail.com'} = cliente
+// console.log(nomeMatheus)
+// console.log(email)
+
+// const frutas = ['Banana', 'Mamao', 'Uva']
+// const [primeira, segunda, terceira] = frutas
+// console.log(segunda)
+
+// const [primeiro, segundo, terceiro] = ['Item1','Item2','Item3']
+// console.log(terceiro)
+
+// function keyboardEvent({key}){
+// console.log(key)
+// if(key === 'a'){
+//   console.log('Letra A')
+// }
+
+// }
+// window.addEventListener('keyup', keyboardEvent)
+
+// const btn = document.querySelector('button')
+// const btnStyles = getComputedStyle(btn)
+
+// const {backgroundColor: cordeFundo, color: cor, margin: margem} = btnStyles
+// console.log(cordeFundo, cor, margem)
+
+// let cursoAtivo = 'JavaScript';
+// let cursoInativo = 'HTML';
+// [cursoAtivo, cursoInativo] = [cursoInativo, cursoAtivo]
+// console.log(cursoAtivo, cursoInativo)
+
+// const cachorro = {
+//   nome: 'Bob',
+//   raca: 'Labrador',
+//   cor: 'Amarelo'
+// }
+// const {cor: bobCor} = cachorro
+// console.log(bobCor)
+
+// function perimetroForma(lado, totaLado = 4){
+//   return lado * totaLado
+// }
+// console.log(perimetroForma(5))
+
+// function anunciarGanhnadores(premio, ...ganhnadores){
+//   ganhnadores.forEach((ganhador)=>{console.log(ganhador + ' ganhou um ' + premio)})
+//   return 'Ganhadores'
+// }
+// const ganhadores = ['Pedro', 'Maria', 'José']
+// console.log(anunciarGanhnadores('Carro', ...ganhadores))
+
+// const frutas = ['Banana', 'Uva', 'Morango']
+// const legumes = ['Cenoura', 'Batata']
+// const comidas = [...frutas, 'Frango', ...legumes]
+
+// console.log(comidas)
+
+// const numeros = [3,12,3123,121,5512,123123,55,121312315,1231323,21312,77575,0.1239,27127,999328]
+// const numeroMax = Math.max(...numeros)
+// console.log(numeroMax)
+
+// function createButton(background = 'blue', color = 'red') {
+//   const buttonElement = document.createElement('button');
+//   buttonElement.style.background = background;
+//   buttonElement.style.color = color;
+//   return buttonElement;
+// } 
+// console.log(createButton())
+
+// const frutas = ['Banana', 'Uva', 'Morango'];
+// const comidas = ['Pizza', 'Batata'];
+
+// comidas.push(...frutas)
+// console.log(comidas)
+// // 
+
+const frutas = ['Banana', 'Morango', 'Uva'];
+const frase = 'Isso é JavaScript';
+
+fetch('https://pokeapi.co/api/v2/pokemon/')
+.then(({headers}) => console.log(headers));
+
+// const buttons = document.querySelectorAll('button')
+// console.log(...buttons)
+// for(const btn of buttons){
+//   btn.style.color = 'blue';
+// }
+
+// const carro = {
+//   marca: 'Honda',
+//   ano: 2028,
+// }
+// for(const chave in carro){
+//   console.log(carro[chave])
+// }
+
+// const buttons = document.querySelector('button')
+// const btnStyles = getComputedStyle(buttons)
+
+// for(const style in btnStyles){
+//   console.log(`${style}: ${btnStyles[style]}`)
+// }
+
+// let i = 0
+// do{
+//   console.log(i++)
+// } while (i <= 20)
+
+// const liList = document.querySelectorAll('li')
+// for(const li of liList){
+//   li.classList.add('class')
+//   console.log(li)
+// }
+
+
+// for(const windowKey in window){
+//   console.log(`${windowKey}: ${window[windowKey]}`)
+// }

@@ -1,10 +1,3 @@
-[
-  {
-    "id": 1,
-    "aula": "JavaScript",
-    "tempo": "25min"
-  },
-  { 
-    "id": 21, "aula": "HTML", "tempo": "15min" 
-  }
-]
+{
+    "aula": "JavaScript"
+ }
