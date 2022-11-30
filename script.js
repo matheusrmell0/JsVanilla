@@ -2646,11 +2646,11 @@
 // console.log(comidas)
 // // 
 
-const frutas = ['Banana', 'Morango', 'Uva'];
-const frase = 'Isso é JavaScript';
+// const frutas = ['Banana', 'Morango', 'Uva'];
+// const frase = 'Isso é JavaScript';
 
-fetch('https://pokeapi.co/api/v2/pokemon/')
-.then(({headers}) => console.log(headers));
+// fetch('https://pokeapi.co/api/v2/pokemon/')
+// .then(({headers}) => console.log(headers.key));
 
 // const buttons = document.querySelectorAll('button')
 // console.log(...buttons)
@@ -2688,3 +2688,202 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
 // for(const windowKey in window){
 //   console.log(`${windowKey}: ${window[windowKey]}`)
 // }
+
+//Regexpppppp
+// const regexpCEP = /\d{5}[-\s]?\d{3}/g;
+
+// const ceps = [
+//   '00000-000',
+//   '00000 000',
+//   '00000000'
+// ];
+
+// for(const cep of ceps) {
+//   console.log(cep, cep.match(regexpCEP));
+// }
+
+// const regexpCPF = /(?:\d{3}[.-]?){3}\d{2}/g;
+
+// const cpfs = [
+// '000.000.000-00',
+// '000-000-000-00',
+// '000.000.000.00',
+// '000000000-00',
+// '00000000000',
+// ];
+
+// for(const cpf of cpfs) {
+//   console.log(cpf, cpf.match(regexpCPF));
+// }
+
+// const regexpCNPJ = /\d{2}[-.]?(?:\d{3}[-.]?){2}[-\/]?\d{4}[-.]?\d{2}/g;
+
+// const cnpjs = [
+//   '00.000.000/0000-00',
+//   '00000000000000',
+//   '00-000-000-0000-00',
+//   '00.000.000/000000',
+//   '00.000.000.000000',
+//   '00.000.000.0000.00',
+// ];
+
+// for(const cnpj of cnpjs) {
+//   console.log(cnpj, cnpj.match(regexpCNPJ));
+// }
+
+// const regexpTELEFONE = /(?:\+?55\s?)?(?:\(?\d{2}\)?[-\s]?)?\d{4,5}[-\s]?\d{4}/g;
+
+// const telefones = [
+//   '+55 11 98888-8888',
+//   '+55 11 98888 8888',
+//   '+55 11 988888888',
+//   '+55 11988888888',
+//   '+5511988888888',
+//   '5511988888888',
+//   '11 98888-8888',
+//   '11 98888 8888',
+//   '(11) 98888 8888',
+//   '(11) 98888-8888',
+//   '11-98888-8888',
+//   '11 98888 8888',
+//   '11988888888',
+//   '11988888888',
+//   '988888888',
+//   '(11)988888888',
+//   '98888 8888',
+//   '8888 8888'
+// ];
+
+// for(const telefone of telefones) {
+//   console.log(telefone, telefone.match(regexpTELEFONE));
+// }
+
+// const regexpEMAIL = /[\w.-]+@[\w-]+\.[\w-.]+/gi;
+
+// const emails = [
+//   'email@email.com',
+//   'email@email.com.org',
+//   'email-email@email.com',
+//   'email_email@email.com',
+//   'email.email23@email.com.br',
+//   'email.email23@empresa-sua.com.br',
+//   'c@contato.cc',
+// ];
+
+// for(const email of emails) {
+//   console.log(email, email.match(regexpEMAIL));
+// }
+
+// const regexpTAG = /(?<=<\/?)[\w]+/gi;
+
+// const tags = [
+//   '<div>Isso é uma div</div>',
+//   '<div class="ativa">Essa está ativa</div>',
+//   '<img src="imagem" />',
+//   '<img src="imagem">',
+//   '<ul class="ativa">',
+//   '<li>Essa está ativa</li>',
+//   '</ul>'
+// ];
+
+// for(const tag of tags) {
+//   console.log(tag, tag.match(regexpTAG));
+// }
+
+// const regexp = /\w+/gi;
+// const regexpObj1 = new RegExp('\\w+', 'gi');
+// const regexpObj2 = new RegExp(/\w+/, 'gi');
+
+// 'JavaScript Linguagem 101'.replace(regexpObj1, 'X');
+
+// const regexpTELEFONE1 = /(?:\+?55\s?)?(?:\(?\d{2}\)?[-\s]?)?\d{4,5}[-\s]?\d{4}/g;
+// const regexpTELEFONE2 = new RegExp('(?:\\+?55\\s?)?(?:\\(?\\d{2}\\)?[-\\s]?)?\\d{4,5}[-\\s]?\\d{4}', 'g');
+
+// regexp.flags; // 'gi'
+// regexp.global; // true
+// regexp.ignoreCase; // true
+// regexp.multiline; // false
+// regexp.source; // '\w+'
+
+// const regexp = /Script/g;
+// const frase = 'JavaScript, TypeScript e CoffeeScript';
+
+// let i = 0
+// while(regexp.test(frase)){
+// console.log(i++, regexp.lastIndex)
+// }
+
+// const regexp = /\w{2,}/g;
+// const frase = 'JavaScript, TypeScript e CoffeeScript';
+// regexp.exec(frase);
+
+// const regexp = /[A-za-z]/g;
+// const frase = 'JavaScript, TypeScript, CoffeeScript, Java, 200';
+// let regexpResult;
+
+// // while((regexpResult = regexp.exec(frase)) !== null) {
+// //   console.log(regexpResult);
+// //   console.log(regexpResult[0]);
+// //   console.log(regexpResult.input);
+// // }
+
+// const resultsplit = frase.split(regexp)
+// const result = frase.match(regexp)
+// console.log(resultsplit)
+
+// const tags = `
+// <ul>
+//   <li>Item 1</li>
+//   <li>Item 2</li>
+// </ul>
+// `;
+
+// const regexp = /<li/g
+// // const result = tags.split(/(?<=<\/?)\w+/g).join('div');
+// const resultReplace = tags.replace(regexp, "$& class='ativa'")
+// console.log(resultReplace)
+
+// const emails = `
+// empresa@email.com
+// contato@email.com
+// suporte@email.com
+// `;
+
+// const emailsErrado = `joao@homail.com.br
+// marta@ggmail.com.br
+// bruna@oulook.com.br
+// mello@hotmail.com`
+
+// const regexp = /(\w+@)([\w.]+)/g
+// // const emailToGmail = emails.replace(regexp, '$1gmail.com');
+// const emailToGmailFunction = emailsErrado.replace(regexp, function(...args){
+//   console.log(args[2])
+//   if(args[2] === 'homail.com.br'){
+//     return `${args[1]}hotmail.com.br`
+//   } else if(args[2] === 'ggmail.com.br'){
+//     return `${args[1]}gmail.com.br`
+//   } else if(args[2] === 'oulook.com.br'){
+//     return `${args[1]}outlook.com.br`
+//   } else{
+//     return args[0]
+//   }
+// });
+// console.log(emailToGmailFunction)
+
+// const regexp = /(\w+)(@[\w]+)/g;
+// const emails = `joao@homail.com.br
+// marta@ggmail.com.br
+// bruna@oulook.com.br`
+
+// emails.replace(regexp, function(...args) {
+//   console.log(args);
+//   if(args[2] === '@homail') {
+//     return `${args[1]}@hotmail`;
+//   } else if(args[2] === '@ggmail') {
+//     return `${args[1]}@gmail`;
+//   } else if(args[2] === '@oulook') {
+//     return `${args[1]}@outlook`;
+//   } else {
+//     return 'x';
+//   }
+// });
