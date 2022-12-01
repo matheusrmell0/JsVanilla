@@ -2887,3 +2887,71 @@
 //     return 'x';
 //   }
 // });
+// console.log(validarCpf.limpar('123---123...233  11'))
+// console.log(validarCpf.construir('12312321111'))
+// console.log(validarCpf.formatar('123---123...233  11'))
+
+// const validarCpf = new ValidarCpf(cpf).iniciar();
+// const validadorCPF = new ValidarCpf();
+
+
+// console.log(validadorCPF.validar('111 111 111 222'))
+
+// const cpfs = document.querySelectorAll('.cpf li')
+
+// const elementsInnerText = ([...elements]) =>{
+//   return elements.map(element => element.innerText)
+// }
+// const resultado = elementsInnerText(cpfs)
+
+// const limparCPF = (cpf) =>{
+// return cpf.replace(/\D/g, '');
+// }
+
+// const construirCPF = (cpf) => {
+//   return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4');
+// }
+
+// const formatarCPFS = (cpfs) => {
+// return cpfs.map(limparCPF).map(construirCPF);
+// }
+
+// const formatCPFs = (cpfsElements) =>{
+//   cpfsElements.forEach((item, index) => {
+//     item.innerText = [...cpfsElements].map(element => element.innerText).map(cpf => cpf.replace(/\D/g, '').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4'))[index]
+//   })
+// }
+// console.log(formatCPFs(cpfs))
+
+// const cpfInput = document.getElementById('cpf')
+// // for(const key in cpfInput){
+// //   console.log(key, cpfInput[key])
+// // }
+// addEventListener('mousemove', ()=>{console.log(cpfInput.value)})
+
+// 
+// export default class ValidarCpf{
+//   constructor(element){
+//     this.element = element
+//   }
+//   limpar(){
+//     this.element.replace(/\D/g, '').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4').match(/(?:\d{3}[-.\s]?){3}\d{2}/g)
+//     const matchCpf = cpf.match(/(?:\d{3}[-.\s]?){3}\d{2}/g);
+//     (matchCpf && matchCpf[0] === this.element.replace(/\D/g, '').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4').match(/(?:\d{3}[-.\s]?){3}\d{2}/g));
+//     this.element.addEventListener('change', () => {
+//       if((matchCpf && matchCpf[0] === this.element.replace(/\D/g, '').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4').match(/(?:\d{3}[-.\s]?){3}\d{2}/g))){
+//         this.element.value = this.element.value.replace(/\D/g, '').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4').match(/(?:\d{3}[-.\s]?){3}\d{2}/g)
+//         this.element.style.borderColor = 'green'
+//       }else{
+//          this.element.style.borderColor = 'red'
+//          const span = document.createElement('span')
+//          span.innerText = 'CPF Invalido'
+//          span.style.color = 'red'
+//          span.style.fontSize = '0.875rem'
+//          console.log(this.element)
+//          this.element.parentElement.insertBefore(span, this.element.nextElementSibling)
+//       }
+//     })
+//   }
+// }
+// 
