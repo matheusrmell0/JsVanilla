@@ -2189,7 +2189,7 @@
 //             })
 //         })
 //     }
-//     pokemonNome('4')
+//     pokemonNome('22')
 
 // Classessss
 
@@ -2955,3 +2955,10 @@
 //   }
 // }
 // 
+// const amor = document.querySelector('.amor')
+// function caseCmg(){
+//   amor.innerText = 'Case cmg bb???'
+//   amor.style.color = 'red'
+//   amor.style.fontSize = '5rem'
+// }
+// document.addEventListener('mousemove', caseCmg)
