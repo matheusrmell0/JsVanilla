@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // var string = 'String';
 // var idadeString = '24';
@@ -2539,9 +2539,9 @@
 // ativarIncremento();
 // ativarIncremento();
 // ativarIncremento();
- 
+
 // Destructuringgggg
-// 
+//
 
 // const cliente = {
 //   nome: 'Mello',
@@ -2636,7 +2636,7 @@
 //   buttonElement.style.background = background;
 //   buttonElement.style.color = color;
 //   return buttonElement;
-// } 
+// }
 // console.log(createButton())
 
 // const frutas = ['Banana', 'Uva', 'Morango'];
@@ -2644,7 +2644,7 @@
 
 // comidas.push(...frutas)
 // console.log(comidas)
-// // 
+// //
 
 // const frutas = ['Banana', 'Morango', 'Uva'];
 // const frase = 'Isso é JavaScript';
@@ -2683,7 +2683,6 @@
 //   li.classList.add('class')
 //   console.log(li)
 // }
-
 
 // for(const windowKey in window){
 //   console.log(`${windowKey}: ${window[windowKey]}`)
@@ -2894,7 +2893,6 @@
 // const validarCpf = new ValidarCpf(cpf).iniciar();
 // const validadorCPF = new ValidarCpf();
 
-
 // console.log(validadorCPF.validar('111 111 111 222'))
 
 // const cpfs = document.querySelectorAll('.cpf li')
@@ -2929,7 +2927,7 @@
 // // }
 // addEventListener('mousemove', ()=>{console.log(cpfInput.value)})
 
-// 
+//
 // export default class ValidarCpf{
 //   constructor(element){
 //     this.element = element
@@ -2954,7 +2952,7 @@
 //     })
 //   }
 // }
-// 
+//
 // const amor = document.querySelector('.amor')
 // function caseCmg(){
 //   amor.innerText = 'Case cmg bb???'
@@ -2962,3 +2960,356 @@
 //   amor.style.fontSize = '5rem'
 // }
 // document.addEventListener('mousemove', caseCmg)
+//
+
+// Debounceeeeee
+// function debounce(callback, delay) {
+//   let timer;
+
+//   return (...args) => {
+//     if (timer) clearTimeout(timer);
+//     timer = setTimeout(() => {
+//       callback(...args);
+//       timer = null;
+//     }, delay);
+//   };
+// }
+
+// function move() {
+//   console.log("Moveu");
+// }
+
+// const debouncedMouseMove = debounce(move, 50);
+
+// window.addEventListener("mousemove", debouncedMouseMove)
+// console.log(debouncedMouseMove)
+
+//Revisao
+
+// // Tudo Objeto
+// const menu = {
+//   class: '.principal',
+//   ativar(){
+//     const menuElement = document.querySelector(this.class);
+//     console.log(menuElement);
+//   }
+// }
+// menu.ativar()
+// console.log(menu)
+// menu.hasOwnProperty('class')
+
+// const number = ['10', '20', '30'].map(Number)
+// const string = 'JavaScript'.toLocaleUpperCase()
+// console.log(string)
+// console.log(number)
+
+// const body = document.querySelector('body');
+// body.classList.add('js')
+
+// Arrow Function
+
+// function upperName(name) {
+//   return name.toLocaleUpperCase()
+// }
+
+// const upperNameConst = function(name){
+//   return name.toLocaleUpperCase()
+// }
+
+// const upperNameArrow = name => name.toLocaleUpperCase();
+// const countLetters = word => word.length;
+// console.log(countLetters('Matheus'));
+
+// class Menu {
+//   constructor(menu, classe) {
+//   this.menuElement = document.querySelector(menu)
+//   this.classe = classe;
+//   this.addActiveEvent = this.addActiveEvent.bind(this)
+//   }
+//   addActiveEvent() {
+//     this.menuElement.addEventListener('click', function(event){
+//       event.target.classList.add(this.classe)
+//       console.log(this)
+//     })
+//   }
+// }
+
+// const menu = new Menu('.principal', 'active')
+// menu.addActiveEvent()
+// console.log(menu)
+
+// class Menu {
+//   constructor(menu, classe) {
+//   this.menuElement = document.querySelector(menu)
+//   this.classe = classe;
+//   }
+//   addActiveEvent() {
+//     this.menuElement.addEventListener('click', (event) => {
+//       event.target.classList.add(this.classe)
+//       console.log(this)
+//     })
+//   }
+// }
+
+// const menu = new Menu('.principal', 'active')
+// menu.addActiveEvent()
+// console.log(menu)
+
+// Destructuring
+
+// document.documentElement.addEventListener('click', handleMouseClick)
+
+// function handleMouseClick(event) {
+//   const {clientX, clientY, target} = event
+//   console.log(clientX, clientY, target)
+// }
+
+// document.documentElement.addEventListener('click', handleMouseClick)
+
+// function handleMouseClick({clientX, clientY, target}) {
+//   console.log(clientX, clientY, target)
+// }
+
+// const arrayFrutas = ['Banana', 'Rato', 'Uva'];
+// const [fruta1, fruta2, fruta3] = arrayFrutas;
+// console.log(fruta1, fruta2, fruta3, arrayFrutas)
+
+// const useState = ['blue', function(color){
+//   useState[0] = color;
+// }]
+
+// const [color, setColor] = useState;
+// setColor('red')
+// console.log(useState)
+
+// Rest e Spread
+
+// Rest
+// function showList(empresa, ...clientes) {
+//   console.log(empresa)
+//   console.log(clientes)
+// }
+
+// showList('NewSmokes', 'Mello', 'Meno', 'Doidao')
+
+// Spread
+
+// const numeros = [1,2,4,22,123,77,10];
+// const max = Math.max(...numeros)
+// console.log(max)
+
+// const li = document.querySelectorAll('li');
+// // li.forEach((item) => console.log(item));
+// [li].map((item) => console.log(item));
+
+// const carro = {
+//   cor: 'azul',
+//   portas: 4,
+//   ano: '2022'
+// }
+
+// const cloneCarro2 = carro;
+// const cloneCarro = {...carro, rodas: 4, tipo: 'automovel'}
+
+// console.log(cloneCarro2 === carro)
+// console.log(cloneCarro === carro) // Clone real (Shadow)
+
+// console.log(cloneCarro)
+// console.log(carro)
+
+// class Transporte {
+//   constructor(){
+//     this.terrestre = true;
+//   }
+//   manutencao(){
+//     return 'Manutenção feita'
+//   }
+// }
+
+// class Carro extends Transporte {
+//   constructor(cor, ano){
+//     super()
+//     this.cor = cor;
+//     this.ano = ano;
+//   }
+// }
+
+// const carro = new Carro('vermelho', 2022)
+// console.log(carro)
+// console.log(carro.manutencao())
+
+// const cloneCarro = {...carro}
+// console.log(cloneCarro) // Não herda o prototipo da classe extendida
+// console.log(cloneCarro.manutencao()) // Não herda o prototipo da classe extendida
+
+// Modules
+
+// import { areaQuadrado, perimetroQuadrado } from './quadrado.js';
+// import circulo from './circulo.js';
+
+// // console.log(areaQuadrado(4));
+// // console.log(perimetroQuadrado(3));
+
+// console.log(circulo.area(2))
+
+// Fetch ♥
+
+// const requisicao = fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((responseJson) => console.log(responseJson));
+// console.log(requisicao);
+
+// fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+//   .then(response => response.json())
+//   .then(responseJson => console.log(responseJson));
+
+// const data = {
+//   id: "mrmello",
+//   nome: "Matheus",
+//   email: "mrmello@mello.com",
+//   senha: "123456",
+//   cep: "123456",
+//   rua: "Ali Perto",
+//   numero: "999",
+//   bairro: "Ibituruna",
+//   cidade: "Governador Valadares",
+//   estado: "Minas Gerais"
+// }
+
+// fetch('https://ranekapi.origamid.dev/wp-json/api/usuario', {
+//   method: 'POST',
+//   headers: {
+//     "Content-Type": 'application/json'
+//   },
+//   body: JSON.stringify(data)
+// })
+
+// Async / Await
+
+// async function fetchPokemon(name) {
+//   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+//   const reponseJson = await response.json();
+//   reponseJson['abilities'].forEach((a) => {
+//     console.log(a['ability'].name)
+//     });
+// }
+// fetchPokemon('pikachu');
+
+// Array - Map, Filter e Reduce
+
+// const precos = [
+//   "Crédito",
+//   "R$ 200",
+//   "R$ 400",
+//   "Contas Pagar",
+//   "R$ 300",
+//   "R$ 450",
+//   "Meus dados"
+// ];
+
+// // const precosFiltro = precos.filter((preco) => {
+// //   console.log(preco)
+// //   if(preco.includes('R$')){
+// //     return true
+// //   } else {
+// //     return false
+// //   }
+// // })
+// // console.log(precosFiltro)
+
+// // const precosFiltro = precos.filter((preco) => {
+// //   return preco.includes('R$')
+// // })
+// // console.log(precosFiltro)
+
+// const precosFiltro = precos.filter(preco => preco.includes('R$'));
+// // console.log(precosFiltro);
+
+// // const precoNumeros = precosFiltro.map(n => console.log(n))
+// // console.log(precoNumeros);
+
+// const precoNumeros = precosFiltro.map((n) => {
+//   // console.log(n)
+//   return +n.replace('R$ ','')
+// })
+
+// // console.log(precoNumeros);
+// // console.log(Math.max(...precoNumeros))
+
+// const total = precoNumeros.reduce((acc, item) => acc + item);
+// console.log(total)
+
+// Expressões
+
+// const grupoA = 100;
+// const grupoB = 300;
+
+// // if(grupoA > grupoB){
+// //   console.log('Teste')
+// // }
+
+// // const vencedor = grupoA < grupoB ? 'Grupo A ganhou' : 'Grupo B ganhou'
+// // console.log(vencedor)
+
+// // const areaQuadrado = l => l * l;
+// // console.log(areaQuadrado(2))
+
+// const grupoAvenceu = grupoA > 50 && 'Grupo A Vencedor'
+// console.log(grupoAvenceu)
+
+// Classes
+
+// class SmoothScroll {
+//   constructor(links) {
+//     this.linksElement = document.querySelectorAll(links);
+//     this.smooth = this.smooth.bind(this);
+//   }
+//   addClickEvent() {
+//     this.linksElement.forEach((link) => {
+//       link.addEventListener('click', this.smooth);
+//     });
+//   }
+//   smooth({ currentTarget }) {
+//     event.preventDefault();
+//     const href = currentTarget.getAttribute('href');
+//     const section = document.querySelector(href);
+//     window.scrollTo({
+//       top: section.offsetTop - (window.innerHeight - section.clientHeight) / 2,
+//       behavior: 'smooth',
+//     });
+//   }
+//   init() {
+//     this.handleScroll();
+//     this.addClickEvent();
+//     this.activeNavScroll();
+//   }
+// }
+
+// class ActiveSmoothScroll extends SmoothScroll {
+//   constructor(links, sections) {
+//     super(links);
+//     this.sections = document.querySelectorAll(sections);
+//     this.handleScroll = this.handleScroll.bind(this)
+
+//   }
+//   handleScroll(){
+//     this.sections.forEach((section, index) => {
+
+//       if(window.scrollY > section.offsetTop - window.innerHeight * 0.5){
+//         this.linksElement[index].classList.add('active')
+//       } else {
+//         this.linksElement[index].classList.remove('active')
+//       }
+//     })
+//   }
+//   activeNavScroll() {
+//     window.addEventListener('scroll', this.handleScroll)
+//   }
+// }
+
+// const scroll = new ActiveSmoothScroll('a[href^="#"]', 'section');
+// scroll.init();
+
+// Finished for now (❁´◡`❁);
